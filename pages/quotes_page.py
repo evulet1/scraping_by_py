@@ -10,5 +10,5 @@ class QuotePage:
     @property
     def quotes(self):
         locator = QuotesPageLocators.QUOTE
-        quote_tags = self.soup.selest(locator)
+        quote_tags = self.soup.select(locator)
         return [QuoteParser(e) for e in quote_tags]
