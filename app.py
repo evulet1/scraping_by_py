@@ -3,10 +3,9 @@ from selenium import webdriver
 from pages.quotes_page import  QuotePage
 
 chrome = webdriver.Chrome(executable_path="c:/projects/chromedriver.exe")
-chrome.get('http://quotes.toscrape.com')
-#page_content = requests.get('http://quotes.toscrape.com').content
+chrome.get('http://quotes.toscrape.com/search.aspx')
 page = QuotePage(chrome)
 
-for quote in page.quotes:
-    print(quote.content)
+author = input("Enter the author you'd like quotes from: ")
+page.select_author(author)
 
