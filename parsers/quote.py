@@ -15,15 +15,15 @@ class QuoteParser:
 
     @property
     def content(self):
-        locator = QuoteLocators.CONTENT
+        locator = QuoteLocators.CONTENT_LOCATOR
         return self.parent.find_element_by_css_selector(locator).text
 
     @property
     def author(self):
-        locator = QuoteLocators.AUTHOR
+        locator = QuoteLocators.AUTHOR_LOCATOR
         return self.parent.find_element_by_css_selector(locator).text
 
     @property
     def tags(self):
-        locator = QuoteLocators.TAGS
+        locator = QuoteLocators.TAGS_LOCATOR
         return [e.string for e in self.parent.find_elements_by_css_selector(locator)]
