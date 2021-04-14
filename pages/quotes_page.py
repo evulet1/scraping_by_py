@@ -54,7 +54,7 @@ class QuotePage:
             self.select_tag(tag_name)
         except NoSuchElementException:
             raise InvalidTagForAuthorError(
-                f"Author '{author_name}' does not have any question tagged with '{tag_name}'."
+                f"Author '{author_name}' does not have any quotes tagged with '{tag_name}'."
             )
         self.search_button.click()
         return self.quotes
